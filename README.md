@@ -1,3 +1,5 @@
+Example of a MirrorMaker v2 configuration Active/Active
+
 ![ScreenShot 1](mm2.png)
 
 ## Create Kafka Cluster 1
