@@ -1,3 +1,5 @@
+![ScreenShot 1](mm2.png)
+
 ## Create Kafka Cluster 1
 
 3 zookeeper nodes (port 2181, 2182, 2183)<br>
@@ -80,12 +82,14 @@ cd kafka-cluster-2
 
 ```
 ${KAFKA_DIR}/bin/./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 3 --topic TopicA
+
 ${KAFKA_DIR}/bin/./kafka-topics.sh --create --zookeeper localhost:3181 --replication-factor 3 --partitions 3 --topic TopicB
 ```
 
 ```
 ${KAFKA_DIR}/bin/./kafka-topics.sh --list --zookeeper localhost:2181
 --> TopicA
+
 ${KAFKA_DIR}/bin/./kafka-topics.sh --list --zookeeper localhost:3181
 --> TopicB
 ```
@@ -111,6 +115,7 @@ mm2-configs.DC-Y.internal
 mm2-offset-syncs.DC-Y.internal
 mm2-offsets.DC-Y.internal
 mm2-status.DC-Y.internal
+
 ${KAFKA_DIR}/bin/./kafka-topics.sh --list --zookeeper localhost:3181
 --> 
 DC-X.TopicA
