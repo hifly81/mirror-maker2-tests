@@ -98,6 +98,9 @@ ${KAFKA_DIR}/bin/./kafka-topics.sh --list --zookeeper localhost:3181
 
 ## Launch MM2
 
+Mirror Maker configuration Active/Active.<br>
+kafka-cluster-1 has been named DC-X, kafka-cluster-2 DC-Y
+
 ```
 ${KAFKA_DIR}/bin/.connect-mirror-maker.sh mm2.properties
 ```
