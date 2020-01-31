@@ -130,3 +130,17 @@ mm2-offset-syncs.DC-X.internal
 mm2-offsets.DC-X.internal
 mm2-status.DC-X.internal
 ```
+
+## Run Producer Perf Test on cluster 1 for TopicA
+
+```
+${KAFKA_DIR}/bin/./kafka-producer-perf-test.sh --topic TopicA --num-records 50000000 --record-size 100 --throughput -1 --producer-props acks=1 bootstrap.servers=localhost:9092,localhost:9093,localhost:9094 buffer.memory=67108864 batch.size=8196
+```
+
+## Verify Topic message size for TopicA (cluster 1) and for DCX.TopicA (cluster2)
+
+```
+${KAFKA_DIR}/bin/./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092,localhost:9093,localhost:9094 --topic TopicA --time -16
+
+${KAFKA_DIR}/bin/./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:19092,localhost:19093,localhost:19094 --topic DCX.TopicA --time -16
+```
